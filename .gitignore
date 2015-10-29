@@ -1,0 +1,22 @@
+* 
+# ignore everything except...
+
+# this file
+!.gitignore
+
+# vhdl files
+!*.vhd
+!*.vhdl
+
+# simulation files
+!/simulation
+!/simulation/modelsim
+!*.vht
+
+# quartus project files
+!*.qpf
+!*.qsf
+
+# quartus design files
+!*.bsf
+!*.bdf
