@@ -39,7 +39,7 @@
 
 set_global_assignment -name FAMILY "Cyclone V"
 set_global_assignment -name DEVICE 5CSEMA5F31C6
-set_global_assignment -name TOP_LEVEL_ENTITY g05_7_segment_decoder
+set_global_assignment -name TOP_LEVEL_ENTITY g05_possibility_table
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 15.0.0
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "15:39:27  OCTOBER 29, 2015"
 set_global_assignment -name LAST_QUARTUS_VERSION 15.0.0
@@ -50,20 +50,48 @@ set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 256
 set_global_assignment -name EDA_SIMULATION_TOOL "ModelSim-Altera (VHDL)"
 set_global_assignment -name EDA_OUTPUT_DATA_FORMAT VHDL -section_id eda_simulation
 set_global_assignment -name VHDL_FILE g05_7_segment_decoder.vhd
+set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "2.5 V"
+set_global_assignment -name CDF_FILE output_files/Chain1.cdf
+set_global_assignment -name CDF_FILE output_files/Chain3.cdf
+set_global_assignment -name VHDL_FILE g05_7_segment_decoder_test.vhd
+set_location_assignment PIN_AF10 -to decoder_2_code[3]
+set_location_assignment PIN_AF9 -to decoder_2_code[2]
+set_location_assignment PIN_AC12 -to decoder_2_code[1]
+set_location_assignment PIN_AB12 -to decoder_2_code[0]
+set_location_assignment PIN_AH28 -to segment_0[6]
+set_location_assignment PIN_AG28 -to segment_0[5]
+set_location_assignment PIN_AF28 -to segment_0[4]
+set_location_assignment PIN_AG27 -to segment_0[3]
+set_location_assignment PIN_AE28 -to segment_0[2]
+set_location_assignment PIN_AE27 -to segment_0[1]
+set_location_assignment PIN_AE26 -to segment_0[0]
+set_location_assignment PIN_AD27 -to segment_1[6]
+set_location_assignment PIN_AF30 -to segment_1[5]
+set_location_assignment PIN_AF29 -to segment_1[4]
+set_location_assignment PIN_AG30 -to segment_1[3]
+set_location_assignment PIN_AH30 -to segment_1[2]
+set_location_assignment PIN_AH29 -to segment_1[1]
+set_location_assignment PIN_AJ29 -to segment_1[0]
+set_location_assignment PIN_AC30 -to segment_2[6]
+set_location_assignment PIN_AC29 -to segment_2[5]
+set_location_assignment PIN_AD30 -to segment_2[4]
+set_location_assignment PIN_AC28 -to segment_2[3]
+set_location_assignment PIN_AD29 -to segment_2[2]
+set_location_assignment PIN_AE29 -to segment_2[1]
+set_location_assignment PIN_AB23 -to segment_2[0]
+set_location_assignment PIN_AB22 -to segment_3[6]
+set_location_assignment PIN_AB25 -to segment_3[5]
+set_location_assignment PIN_AB28 -to segment_3[4]
+set_location_assignment PIN_AC25 -to segment_3[3]
+set_location_assignment PIN_AD25 -to segment_3[2]
+set_location_assignment PIN_AC27 -to segment_3[1]
+set_location_assignment PIN_AD26 -to segment_3[0]
+set_global_assignment -name VHDL_FILE g05_possibility_table.vhd
+set_global_assignment -name SDC_FILE g05_lab3.sdc
+set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
+set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+set_global_assignment -name TIMEQUEST_DO_REPORT_TIMING ON
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
-set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "2.5 V"
-set_location_assignment PIN_AB12 -to code[0]
-set_location_assignment PIN_AC12 -to code[1]
-set_location_assignment PIN_AF9 -to code[2]
-set_location_assignment PIN_AF10 -to code[3]
-set_location_assignment PIN_AD11 -to RippleBlank_In
-set_location_assignment PIN_AH28 -to segments[6]
-set_location_assignment PIN_AG28 -to segments[5]
-set_location_assignment PIN_AF28 -to segments[4]
-set_location_assignment PIN_AG27 -to segments[3]
-set_location_assignment PIN_AE28 -to segments[2]
-set_location_assignment PIN_AE27 -to segments[1]
-set_location_assignment PIN_AE26 -to segments[0]
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

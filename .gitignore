@@ -13,6 +13,9 @@
 !/simulation/modelsim
 !*.vht
 
+# timing files
+!*.sdc
+
 # quartus project files
 !*.qpf
 !*.qsf
