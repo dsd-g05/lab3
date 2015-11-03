@@ -1,10 +1,10 @@
--- Descp.
+-- Descp. Hardware test for 7_segment_decoder
 --
 -- entity name: g05_7_segment_decoder_test
 --
 -- Version 1.0
 -- Author: Felix Dube; felix.dube@mail.mcgill.ca & Auguste Lalande; auguste.lalande@mail.mcgill.ca
--- Date: 
+-- Date: November 2, 2015
 
 library ieee;
 use ieee.std_logic_1164.all;

@@ -1,6 +1,6 @@
 -- Descp. Generate the table of all the possible pattern
 --
--- entity name: g05
+-- entity name: g05_possibility_table
 --
 -- Version 1.0
 -- Author: Felix Dube; felix.dube@mail.mcgill.ca & Auguste Lalande; auguste.lalande@mail.mcgill.ca
