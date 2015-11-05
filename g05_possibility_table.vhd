@@ -1,6 +1,6 @@
 -- Descp. Generate the table of all the possible pattern
 --
--- entity name: g05
+-- entity name: g05_possibility_table
 --
 -- Version 1.0
 -- Author: Felix Dube; felix.dube@mail.mcgill.ca & Auguste Lalande; auguste.lalande@mail.mcgill.ca
@@ -9,6 +9,7 @@
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.std_logic_unsigned.all;
+use ieee.numeric_std.all;
 
 entity g05_possibility_table is
 	port (
@@ -25,7 +26,10 @@ end g05_possibility_table;
 
 architecture behavior of g05_possibility_table is
 	signal TC : std_logic_vector(11 downto 0);
+	signal MT : std_logic_vector(4195 downto 0);
 begin
+
+	-- Table memory counter
 	process(CLK, TC_RST)
 	begin
 		if(TC_RST = '1') then
@@ -58,13 +62,16 @@ begin
 	
 	TM_ADDR <= TC;
 	
+	-- Write in the memory table at a specific memory address
 	process(CLK)
 	begin
 		if(rising_edge(CLK)) then
 			if(TM_EN = '1') then
-				TM_OUT <= TM_IN;
+				MT(to_integer(unsigned(TC))) <= TM_IN;
 			end if;
 		end if;
 	end process;
+	
+	TM_OUT <= MT(to_integer(unsigned(TC)));
 	
 end behavior;

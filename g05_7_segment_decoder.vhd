@@ -1,4 +1,4 @@
--- Descp. Determines witch LED should be lighted up on the 7-segment display.
+-- Descp. Determines which LED should be lit up on the 7-segment display.
 --
 -- entity name: g05_7_segment_decoder
 --
