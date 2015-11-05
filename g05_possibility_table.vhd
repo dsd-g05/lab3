@@ -34,6 +34,7 @@ begin
 	begin
 		if(TC_RST = '1') then
 			TC <= "000000000000";
+			TC_LAST <= '0';
 		elsif(rising_edge(CLK)) then
 			if(TC_EN = '1') then
 				if(TC(2 downto 0) = "101") then
@@ -42,19 +43,16 @@ begin
 							if(TC(11 downto 9) = "101") then
 								TC_LAST <= '1';
 							else
-								TC(8 downto 0) <= "000000000";
-								TC <= TC + 001000000000;
+								TC <= TC + 147;
 							end if;
 						else
-							TC(5 downto 0) <= "000000";
-							TC <= TC + 000001000000;
+							TC <= TC + 19;
 						end if;
 					else
-						TC(2 downto 0) <= "000";
-						TC <= TC + 000000001000;
+						TC <= TC + 3;
 					end if;
 				else
-					TC <= TC + 000000000001;
+					TC <= TC + 1;
 				end if;
 			end if;
 		end if;

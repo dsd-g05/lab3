@@ -69,28 +69,28 @@ BEGIN
 always : PROCESS                                                                                   
 BEGIN
 																				
-	TC_RST <= 1;
-	TC_EN <= 0;
+	TC_RST <= '1';
+	TC_EN <= '0';
 	FOR i IN 0 TO 2 LOOP
-			CLK <= 1;
+			CLK <= '1';
 			wait for 20 ns;
-			CLK <= 0;
+			CLK <= '0';
 			wait for 20 ns;
     END LOOP;
 	 
-	TC_RST <= 0;
+	TC_RST <= '0';
 	FOR i IN 0 TO 2 LOOP
-			CLK <= 1;
+			CLK <= '1';
 			wait for 20 ns;
-			CLK <= 0;
+			CLK <= '0';
 			wait for 20 ns;
     END LOOP;
 	 
-	TC_EN <= 1;
+	TC_EN <= '1';
 	FOR i IN 0 TO 1300 LOOP
-			CLK <= 1;
+			CLK <= '1';
 			wait for 20 ns;
-			CLK <= 0;
+			CLK <= '0';
 			wait for 20 ns;
     END LOOP;
  
