@@ -68,31 +68,81 @@ BEGIN
 	);                                         
 always : PROCESS                                                                                   
 BEGIN
-																				
-	TC_RST <= '1';
+	--Set up																			
+	CLK <= '0';
 	TC_EN <= '0';
-	FOR i IN 0 TO 2 LOOP
-			CLK <= '1';
-			wait for 20 ns;
-			CLK <= '0';
-			wait for 20 ns;
-    END LOOP;
-	 
+	TC_RST <= '1';
+	TM_EN <= '0';
+	TM_IN <= '0';
+	wait for 10 ns;
+	
+	--Write 1 at all the address
 	TC_RST <= '0';
-	FOR i IN 0 TO 2 LOOP
+	TM_EN <= '1';
+	TC_EN <= '1'
+	TM_IN <= '1';
+	
+	
+	while(TC_LAST = '0') loop
 			CLK <= '1';
 			wait for 20 ns;
 			CLK <= '0';
 			wait for 20 ns;
-    END LOOP;
-	 
+	end loop;
+	
+	TC_RST <= '1';
+	wait for 10 ns;
+	
+	--Read all the 1s
+	TC_RST <= '0';
+	TM_EN <= '0';
 	TC_EN <= '1';
-	FOR i IN 0 TO 1300 LOOP
+	
+	
+	while(TC_LAST = '0') loop
 			CLK <= '1';
 			wait for 20 ns;
 			CLK <= '0';
 			wait for 20 ns;
-    END LOOP;
+	end loop;
+	
+	TC_RST <= '1';
+	wait for 10 ns;
+	
+	--Write all 0s
+	TC_RST <= '0';
+	TM_EN <= '1';
+	TC_EN <= '1';
+	TM_IN <= '0';
+	
+	
+	while(TC_LAST = '0') loop
+			CLK <= '1';
+			wait for 20 ns;
+			CLK <= '0';
+			wait for 20 ns;
+	end loop;
+	
+	TC_RST <= '1';
+	wait for 10 ns;
+	
+	
+	--Read all the 0s
+	TC_RST <= '0';
+	TM_EN <= '0';
+	TC_EN <= '1';
+	
+	
+	while(TC_LAST = '0') loop
+			CLK <= '1';
+			wait for 20 ns;
+			CLK <= '0';
+			wait for 20 ns;
+	end loop;
+	
+	TC_RST <= '1';
+	wait for 10 ns;
+	
  
 WAIT;                                                        
 END PROCESS always;                                          
