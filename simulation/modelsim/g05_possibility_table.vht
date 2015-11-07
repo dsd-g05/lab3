@@ -79,7 +79,7 @@ BEGIN
 	--Write 1 at all the address
 	TC_RST <= '0';
 	TM_EN <= '1';
-	TC_EN <= '1'
+	TC_EN <= '1';
 	TM_IN <= '1';
 	
 	
