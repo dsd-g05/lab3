@@ -23,3 +23,10 @@
 # quartus design files
 !*.bsf
 !*.bdf
+
+# SignalTap II files
+!.stp
+
+# programmign files
+!/output_files
+!.sof
