@@ -55,10 +55,10 @@ begin
 					TC <= TC + 1;
 				end if;
 			end if;
-			TM_ADDR <= TC;
+			
 		end if;
 	end process;
-	
+	TM_ADDR <= TC;
 	-- Write in the memory table at a specific memory address
 	process(CLK)
 	begin
@@ -66,8 +66,8 @@ begin
 			if(TM_EN = '1') then
 				MT(to_integer(unsigned(TC))) <= TM_IN;
 			end if;
-			TM_OUT <= MT(to_integer(unsigned(TC)));
+			
 		end if;
 	end process;
-	
+	TM_OUT <= MT(to_integer(unsigned(TC)));
 end behavior;
