@@ -30,3 +30,4 @@
 # programmign files
 !/output_files
 !*.sof
+!*.cdf
