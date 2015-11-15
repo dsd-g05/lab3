@@ -26,8 +26,3 @@
 
 # SignalTap II files
 !*.stp
-
-# programmign files
-!/output_files
-!*.sof
-!*.cdf
